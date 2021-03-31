@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "sites/*"
+  ],
+  "scripts": {
+    "boot": "lerna bootstrap",
+    "clean": "lerna clean",
+    "build": "yarn boot && yarn workspace @horns/ui-control build",
+    "build:watch": "yarn boot && yarn workspace @horns/ui-control build:watch",
+    "release": "yarn build && lerna publish"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "lerna": "^4.0.0",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.3"
+  }
+}
